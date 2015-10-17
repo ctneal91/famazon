@@ -7,8 +7,9 @@ class SessionsController < ApplicationController
     password = params[:password]
 
     user = User.find_by email: email
-    if user.present? && user.authenticate(:password)
-      sign_in user
+
+    if user.present? && user.authenticate(password)
+      session[:user_id] = user.id
       redirect_to root_path
     else
       render :new
@@ -16,7 +17,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    sign_out
+    session.delete :user_id
     redirect to root_path
   end
 end

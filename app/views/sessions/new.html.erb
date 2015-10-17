@@ -1,13 +1,13 @@
-<%= form_for @user do |f| %>
-  <div class="sign_in_form">
-    <%= f.label :email %>
-    <%= f.text_field  :email %>
+<%= form_tag @user do %>
+  <div class="form_group">
+    <%= label_tag :email %>
+    <%= text_field_tag  :email, "", class: "form-control" %>
   </div>
-  <div class="sign_in_form">
-    <%= f.label :password %>
-    <%= f.password_field  :password %>
+  <div class="form_group">
+    <%= label_tag :password %>
+    <%= password_field_tag :password, "", class: "form-control" %>
   </div>
-  <div class="btn btn-primary">
-    <%= f.submit %>
+  <div class="form_group">
+    <%= submit_tag "Sign In", class: "btn btn-primary"  %>
   </div>
 <% end %>
