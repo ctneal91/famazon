@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   root 'products#index'
 
   get 'products/:id' => 'products#show', as: :product
+
+  get 'sign_in' => 'sessions#new', as: :sign_in
+  post 'sign_in' => 'sessions#create'
+  delete 'sign_out' => 'sessions#destroy', as: :sign_out
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
