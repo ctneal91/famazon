@@ -9,7 +9,10 @@
 <body>
 <nav>
   <% if @current_user %>
-    "You are signed in!"
+      <div class="sign_in_notice">
+        "You are signed in!"
+      </div>
+      <%= link_to "Sign Out", sign_out_path, method: :delete %>
   <% else %>
     <%= link_to "Sign In", sign_in_path %>
   <% end %>
