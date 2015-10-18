@@ -49,3 +49,5 @@ end
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'simple_form'
 gem 'minitest-rails'
+gem 'rails_admin'
+gem 'stripe'
