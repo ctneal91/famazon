@@ -1,7 +1,14 @@
 <%= @products.each do |product| %>
-  <div class="product">
-    <%= link_to product.name, product_path(id: product.id) %>
-    <%= product.description %>
-    <%= product.price %>
+  <div class="product_container">
+    <div class="product_name">
+      <%= link_to product.name, product_path(id: product.id) %>
+    </div>
+    <div class="product_description">
+      <%= product.description %>
+    </div>
+    <div class="product_price">
+      Price: <%= product.price_in_dollars %>
+    </div>
+    <img src="<%= product.image_url %>" height="80"></img>
   </div>
 <% end %>
